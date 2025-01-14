@@ -93,6 +93,7 @@
 
         <Button
             android:id="@+id/form_submit"
+            android:foreground="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginStart="16dp"
