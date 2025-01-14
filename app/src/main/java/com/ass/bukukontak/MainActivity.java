@@ -1,5 +1,6 @@
 package com.ass.bukukontak;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -13,10 +14,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText formName, formNumber, formEmail;
     Button submitButton;
+    FloatingActionButton contactListButton;
 
 
     @Override
@@ -24,19 +28,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         formName = findViewById(R.id.form_name);
         formNumber =  findViewById(R.id.form_phone);
         formEmail = findViewById(R.id.form_mail);
         submitButton = findViewById(R.id.form_submit);
+        contactListButton = findViewById(R.id.contact_list_button);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ContactHelper contactHelper = new ContactHelper(MainActivity.this);
 
+        contactListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ContactListActivity.class));
+            }
+        });
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
