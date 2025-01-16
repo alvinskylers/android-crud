@@ -1,9 +1,11 @@
 package com.ass.bukukontak;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,18 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         holder.textName.setText(contactModels.get(position).getName());
         holder.textNumber.setText(contactModels.get(position).getNumber());
         holder.textEmail.setText(contactModels.get(position).getEmail());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ContactFormActivity.class);
+                intent.putExtra("id", contactModels.get(position).getId());
+                intent.putExtra("name", contactModels.get(position).getName());
+                intent.putExtra("number", contactModels.get(position).getNumber());
+                intent.putExtra("email", contactModels.get(position).getEmail());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

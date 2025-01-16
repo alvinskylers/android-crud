@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
                     formName.setText("");
                     formNumber.setText("");
                     formEmail.setText("");
-                    Toast.makeText(MainActivity.this,"data berhasil disimpan!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this,"Kontak berhasil disimpan!", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Field data kosong!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Field data kontak masih kosong!", Toast.LENGTH_SHORT).show();
                 }
 
             }

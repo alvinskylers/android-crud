@@ -57,4 +57,20 @@ public class ContactHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public void deleteData(String id) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.delete("contacts", "id=?", new String[] {id});
+    }
+
+
+    public void updateData(String id, String name, String number, String email) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name",name);
+        values.put("number", number);
+        values.put("email", email);
+
+        database.update("contacts",values, "id = ?",new String[] {id});
+    }
+
 }
