@@ -48,4 +48,13 @@ public class ContactHelper extends SQLiteOpenHelper {
 
         return cursor;
     }
+
+    public Cursor searchData(String key) {
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM contacts WHERE name LIKE ?",
+                new String[] { "%" + key + "%" });
+
+        return cursor;
+    }
+
 }

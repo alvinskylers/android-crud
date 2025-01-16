@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:layout_marginTop="6dp"
+    android:layout_marginTop="10dp"
     android:layout_marginBottom="6dp"
     android:layout_height="100dp">
 
@@ -54,13 +54,14 @@
 
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="170dp"
-            android:src="@drawable/icon_edit" />
-
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/edit_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="280dp"
+        android:src="@drawable/icon_edit" />
 
 </androidx.cardview.widget.CardView>

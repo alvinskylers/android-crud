@@ -8,6 +8,21 @@
     tools:context=".ContactListActivity"
     android:background="@color/gray">
 
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/shape_edit_text"
+        android:inputType="textPersonName"
+        android:hint="cari kontak"
+        android:textColorHint="@color/grayish"
+        android:drawableStart="@drawable/icon_search"
+        android:drawablePadding="10dp"
+        android:paddingStart="10dp"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contacts_recycler"
         android:layout_height="wrap_content"
